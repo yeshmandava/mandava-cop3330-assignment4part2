@@ -1,0 +1,107 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+JavaFX.GUI = TodoApp
+JavaFX.GUI = TodoController
+
+class TodoApp
+{
+    +main()
+    +start()
+}
+
+class Input
+{
+    -String dueDate
+    -String todoTask
+    -Boolean bool
+
+    +Input()
+    +getDate()
+    +setDueDate()
+    +getTask()
+    +checkComplete()
+    +markComplete()
+    +limitInput()
+}
+
+class AppendTodoFile
+{
+    -String fileDirectory
+    -String originalPath
+    -String fileName
+
+    +appendFile()
+    +FileName()
+    +returnFileDirec()
+    +initFilePath()
+    +loadFile()
+    +editFile()
+    +saveList()
+
+}
+
+class TodoController
+{
+    -ListView<Todo>
+    -ObservableList<Todo>
+    -ObservableList<Todo>
+    -DatePicker
+    -TextField
+    -TableColumn<Todo, LocalDate>
+    -TableColumn<Todo, String>
+    -TableColumn<Todo, Boolean>
+    -AppendTodoFile
+
+
+    +Init()
+    +AddListClick()
+    +DelListClick()
+    +DisplayAllClick()
+    +ShowCompleteClick()
+    +ShowIncompleteClick()
+    +NewTaskClick()
+    +DelTaskClick()
+    +SaveFile()
+    +loadFile()
+    +saveList()
+    +loadList()
+    +Quit()
+}
+
+class AppendTodoList
+{
+    +ArrayList<Tasks>
+
+    +AppendTodoList()
+    +newTodo()
+    +removeTodo()
+
+}
+
+class Tasks
+{
+    +String TodoName
+    +ArrayList<Input>
+
+    +Tasks()
+    +ListName()
+    +updateName()
+    +newTask()
+    +removeTask()
+
+}
+
+
+TodoApp <--|> AppendTodoFile
+Input <-|> Tasks
+AppendTodoFile --|> AppendTodoList
+Tasks <-|> AppendTodoList
+AppendTodoFile --|> Tasks
+
+
+AppendTodoList = TodoController
+AppendTodoFile = TodoController
+Tasks == TodoController
+
+@enduml
