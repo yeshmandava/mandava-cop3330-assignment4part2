@@ -39,10 +39,11 @@ public class Input implements Serializable
         return dueDate;
     }
 
-    public void setDueDate()
+    public void setDueDate(String chosenDate)
     {
         //Initialize the date as this.dueDate;
         //this.dueDate = date;
+        this.dueDate = chosenDate;
     }
 
     public String getTask()
@@ -51,24 +52,24 @@ public class Input implements Serializable
         return todoTask;
     }
 
-    public boolean checkComplete()
-    {
-        //Check to see if the tasks are completed or not
-        //Use this to sort completed and incomplete
-        return bool;
-    }
-
-    public void markComplete()
+    public void markComplete(Boolean done)
     {
         //Use previous func to mark whether task is complete or not
         //this.checkComplete = bool;
+        this.bool = done;
     }
 
-    public void limitInput()
+    public void limitInput(String input)
     {
         //Limit the user from putting more than 256 char in text bar
         //If greater it will cut to only 256
         //String.substring(0,256);
+
+        if(input.length() >256) {
+            this.todoTask = input.substring(0, 256);
+        }
+        else
+            this.todoTask = (input);
     }
 
 }

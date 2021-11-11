@@ -31,14 +31,13 @@ class AppendTodoFile
     -String originalPath
     -String fileName
 
-    +appendFile()
+    +appendTodoFile()
     +FileName()
+    +initFile()
     +returnFileDirec()
     +initFilePath()
     +loadFile()
     +editFile()
-    +saveList()
-
 }
 
 class TodoController
