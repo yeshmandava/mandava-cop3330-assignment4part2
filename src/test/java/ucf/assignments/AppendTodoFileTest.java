@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
  *  Copyright 2021 Yeshwanth Mandava
  */
 
-import javax.annotation.processing.SupportedAnnotationTypes;
 
 import java.io.File;
 import java.io.IOException;
@@ -59,7 +58,6 @@ class AppendTodoFileTest
     void returnFileDirec()
     {
         assertEquals("Hey", fileDirectory);
-        assertEquals(fileDirectory,originalPath);
     }
 
     @Test
