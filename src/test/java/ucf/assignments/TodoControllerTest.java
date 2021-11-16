@@ -1,5 +1,7 @@
 package ucf.assignments;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TodoControllerTest
@@ -29,7 +31,7 @@ class TodoControllerTest
     {
         //Test to check that when user clicks the add list button the correct message is displayed
         //AssertEquals(When clicked display "list added")
-        System.out.println("Added list")
+        System.out.println("Added list");
     }
 
     @Test
