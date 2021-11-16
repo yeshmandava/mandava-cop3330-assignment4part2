@@ -14,7 +14,7 @@ Main Controls
 1. To edit the date once the task is already a part of the list, simply double click on the respective date of the appropriate task under the due column
 2. To edit the task description oce the task is already a part of the list, simply double click on the task description of the appropriate task under the Todo column
 3. To edit the status of the task (Complete or Incomplete), simply double click on the appropriate task under the 'Complete' column and a drop down will appear allowing you to choose an option
-4. To sort the rows, click on the respective headers ('Due', 'Todo', Completed').
+4. To sort the rows, click on the respective headers ('Due Date', 'Tasks Todo', Complete').
 
 File
 
