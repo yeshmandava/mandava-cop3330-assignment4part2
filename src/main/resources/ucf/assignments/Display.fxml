@@ -32,7 +32,7 @@
                             <children>
                                 <TableView fx:id="table" accessibleRole="CONTEXT_MENU" editable="true" maxHeight="1.7976931348623157E308" prefWidth="667.0" snapToPixel="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <columns>
-                                        <TableColumn fx:id="dueDateSection" maxWidth="500.0" minWidth="120.0" prefWidth="-1.0" text="Due" />
+                                        <TableColumn fx:id="dueDateSection" maxWidth="500.0" minWidth="120.0" prefWidth="-1.0" text="Due Date" />
                                         <TableColumn fx:id="todoDescription" maxWidth="1.7976931348623157E308" minWidth="200.0" prefWidth="280.0" text="Tasks Todo" />
                                         <TableColumn fx:id="completedColumn" maxWidth="200.0" minWidth="100.0" prefWidth="-1.0" text="Complete" />
                                     </columns>
@@ -86,14 +86,14 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#AddTaskClick" text="New Todo" />
+                        <MenuItem mnemonicParsing="false" onAction="#AddTaskClick" text="New Task" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" onAction="#DelTaskClick" text="Delete Todo" />
+                        <MenuItem mnemonicParsing="false" onAction="#DelTaskClick" text="Delete Task" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#DelListClick" text="Delete List" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="View">
+                <Menu mnemonicParsing="false" text="Sort">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#DisplayAllClick" text="All" />
                         <MenuItem mnemonicParsing="false" onAction="#ShowCompleteClick" text="Complete" />
