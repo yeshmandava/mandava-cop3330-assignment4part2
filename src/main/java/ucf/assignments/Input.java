@@ -8,12 +8,11 @@ package ucf.assignments;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Input implements Serializable
-{
+public class Input implements Serializable {
 
 
     private String dueDate;
-    private String todoTask;
+    private String todoText;
     private Boolean bool;
 
     public Input() {
@@ -21,55 +20,59 @@ public class Input implements Serializable
         // set default string to blank ""
         // set default Boolean to false
         this.dueDate = (LocalDate.now().toString());
-        this.todoTask = (" ");
+        this.todoText = ("");
         this.bool = false;
-
     }
 
-    public Input(LocalDate date, String string)
-    {
+    public Input(LocalDate date, String string) {
         //Take in date info to update the due date section
         //Update the task bar by using string input parameter
         //setDueDate(date.toString());
+        setDueDate(date.toString());
+        limitInput(string);
+        this.bool = false;
     }
 
-    public String getDate()
-    {
+
+    public String getDueDate() {
         //returns the date value for the task
         return dueDate;
     }
 
-    public void setDueDate(String chosenDate)
-    {
-        //Initialize the date as this.dueDate;
-        //this.dueDate = date;
-        this.dueDate = chosenDate;
-    }
-
-    public String getTask()
-    {
+    public String getTodoText() {
         //Returns the entered task in string form
-        return todoTask;
+        return todoText;
     }
 
-    public void markComplete(Boolean done)
-    {
+    public Boolean getBool() {
         //Use previous func to mark whether task is complete or not
         //this.checkComplete = bool;
-        this.bool = done;
+        return bool;
     }
 
-    public void limitInput(String input)
-    {
+
+    public void setDueDate(String date) {
+        //Initialize the date as this.dueDate;
+        //this.dueDate = date;
+        this.dueDate = date;
+    }
+
+    public void limitInput(String input) {
         //Limit the user from putting more than 256 char in text bar
         //If greater it will cut to only 256
         //String.substring(0,256);
-
-        if(input.length() >256) {
-            this.todoTask = input.substring(0, 256);
+        if (input.length() > 256) {
+            this.todoText = input.substring(0, 256);}
+        else {
+            this.todoText = input;
         }
-        else
-            this.todoTask = (input);
     }
+
+    public void setBool(Boolean bool) {
+        // set value based off of boolean parameter
+        // this.setCompleted = bool
+        this.bool = bool;
+    }
+
 
 }

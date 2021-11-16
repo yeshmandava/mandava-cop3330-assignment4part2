@@ -72,9 +72,7 @@ public class AppendTodoFile
         try{
             ObjectInputStream inputStream = new ObjectInputStream(Files.newInputStream(file));
             return inputStream.readObject();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return null;

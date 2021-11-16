@@ -1,8 +1,13 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-JavaFX.GUI = TodoApp
-JavaFX.GUI = TodoController
+TodoApp --> TodoController
+TodoController -->AppendTodoFile
+TodoController = EditTable
+EditTable <-> Input
+AppendTodoFile <-> Input
+AppendTodoFile <-> EditTable
+
 
 class TodoApp
 {
@@ -17,11 +22,11 @@ class Input
     -Boolean bool
 
     +Input()
-    +getDate()
+    +getDueDate()
     +setDueDate()
-    +getTask()
-    +checkComplete()
-    +markComplete()
+    +getTodoText()
+    +getBool()
+    +setBool()
     +limitInput()
 }
 
@@ -42,65 +47,37 @@ class AppendTodoFile
 
 class TodoController
 {
-    -ListView<Todo>
-    -ObservableList<Todo>
-    -ObservableList<Todo>
-    -DatePicker
-    -TextField
-    -TableColumn<Todo, LocalDate>
-    -TableColumn<Todo, String>
-    -TableColumn<Todo, Boolean>
-    -AppendTodoFile
+    -TableView<Input> table
+    -ObservableList<Input> dataTemp
+    -ObservableList<Input> data
+    -DatePicker selectDueDate
+    -TextField todoInput
+    -TableColumn<Todo, String> dueDateSection
+    -TableColumn<Todo, String> todoDescription
+    -TableColumn<Todo, Boolean> completedColumn
+    -AppendTodoFile manage
+    -FileChooser fileC
 
 
-    +Init()
+    +Initialize()
     +AddListClick()
     +DelListClick()
     +DisplayAllClick()
     +ShowCompleteClick()
     +ShowIncompleteClick()
-    +NewTaskClick()
+    +AddTaskClick()
     +DelTaskClick()
     +SaveFile()
     +loadFile()
-    +saveList()
-    +loadList()
     +Quit()
 }
 
-class AppendTodoList
+class EditTable
 {
-    +ArrayList<Tasks>
-
-    +AppendTodoList()
-    +newTodo()
-    +removeTodo()
+   +AdjustDate
+   +AdjustText
+   +AdjustStatus
 
 }
-
-class Tasks
-{
-    +String TodoName
-    +ArrayList<Input>
-
-    +Tasks()
-    +ListName()
-    +updateName()
-    +newTask()
-    +removeTask()
-
-}
-
-
-TodoApp <--|> AppendTodoFile
-Input <-|> Tasks
-AppendTodoFile --|> AppendTodoList
-Tasks <-|> AppendTodoList
-AppendTodoFile --|> Tasks
-
-
-AppendTodoList = TodoController
-AppendTodoFile = TodoController
-Tasks == TodoController
 
 @enduml
