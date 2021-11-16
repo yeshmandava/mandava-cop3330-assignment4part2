@@ -7,6 +7,8 @@ How to Use the TodoApp!!!
 2. Then, pick a date from the date input on the bottom left
 3. Press the add button on the bottom right to append the todo list
 
+
+
 Main Controls
 
 {Inputs can onle be 256 char}
@@ -16,6 +18,8 @@ Main Controls
 3. To edit the status of the task (Complete or Incomplete), simply double click on the appropriate task under the 'Complete' column and a drop down will appear allowing you to choose an option
 4. To sort the rows, click on the respective headers ('Due Date', 'Tasks Todo', Complete').
 
+
+
 File
 
 1. New List - This button will allow you to launch a new window of the TodoApp
@@ -23,11 +27,15 @@ File
 3. Save File - This button will allow you to save a current todo list onto your computer for future reference.
 4. Quit - This button will allow you to exit the program and will not save any existing information
 
+
+
 Edit
 
 1. New Task - This button will allow you to create a new Todo task onto the todo list (This will add in the basic, pre-loaded inputs already at the bottom of the screen)
 2. Delete Task - This button will allow you to delete a certain task in your todo list --> To operate, pre select the desired task by clicking on it and then press the delete todo button under edit. That selected task will be deleted from the list
 3. Delete List - This button will allow you to delete the entire todo list as a whole.
+
+
 
 Sort
 
